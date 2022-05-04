@@ -1,0 +1,38 @@
+﻿<Window x:Class="Primitives.ConnectDatabaseForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Primitives"
+        mc:Ignorable="d"
+        Title="Create Cylinder" Height="405.89" Width="573.759">
+    <Grid Margin="0,0,4.8,10.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <TextBox Name="ServerName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="(local)\SQLEXPRESS"></TextBox>
+        <TextBox Name="DbNameName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="TestDataBase"></TextBox>
+        <Label Content="Enter the server name" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" KeyDown="Label_KeyDown"></Label>
+        <Label Content="Enter the table name" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" KeyDown="Label_KeyDown"></Label>
+        <TextBox Name="TableName" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Text="TableName"></TextBox>
+        <Label Content="Enter the DbName name" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" KeyDown="Label_KeyDown"></Label>
+        <Label Name="LUser" Content="Enter the user name" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" KeyDown="Label_KeyDown" Margin="12,8.2"/>
+        <TextBox x:Name="UserName" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" />
+        <Label Name="LPassword" Content="Enter the user password" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" KeyDown="Label_KeyDown" Margin="12,8.4"/>
+        <TextBox x:Name="Password" Grid.Row="5" HorizontalAlignment="Stretch" Grid.Column="1" />
+        <CheckBox Name="Auth" Content="Use windows authification" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Checked="Auth_Checked" Unchecked="Auth_Unchecked" />
+        <Button Name="Ok" Content="Ok" FontSize="18" Grid.Row="6" Grid.Column="0" />
+        <Button Name="Cancel" Content="Cancel" FontSize="18" Grid.Row="6" Grid.Column="1" Click="Cancel_Click" />
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="Primitives.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Primitives" Height="477.619" Width="809.993">
+    <Grid Background="Black" MouseWheel="Grid_MouseWheel"
+		MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp"
+		MouseMove="Grid_MouseMove">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="White" Grid.ColumnSpan="9" />
+        <Button x:Name="button_p" Grid.Row="0" Content="+" Click="Button_plus" Grid.ColumnSpan="1" />
+        <Button x:Name="button_m" Grid.Row="0" Grid.Column="1"  Content="-" Click="Button_minus" Grid.ColumnSpan="1" />
+
+
+        <Viewport3D x:Name="viewport" Grid.Row="1" Grid.ColumnSpan="9" Height="446" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name="camera" FarPlaneDistance="150" LookDirection="-10,-10,-10"
+					UpDirection="0,1,0" NearPlaneDistance="0" Position="20,20,20"
+					FieldOfView="45" />
+            </Viewport3D.Camera>
+
+            <ModelVisual3D x:Name="model">
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="group">
+                        <AmbientLight Color="DarkGray" />
+                        <DirectionalLight Color="White" Direction="-5,-5,-7" />
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </Viewport3D>
+        <Button x:Name="Cylinder_button" Content="Create Cylinder" Grid.Column="2" Click="Cylinder_button_Click" />
+        <Button x:Name="Cone_button" Content="Create Cone" Grid.Column="3" Click="Cone_button_Click" />
+        <Button x:Name="Cube_button" Content="Create Cube" Grid.Column="4" Click="Cube_button_Click" />
+        <Button x:Name="Sphere_button" Content="Create Sphere" Grid.Column="5" Click="Sphere_button_Click" />
+        <Button x:Name="Pyramid_button" Content="Create Pyramid" Grid.Column="6" Click="Pyramid_button_Click" />
+        <Button x:Name="Save" Content="Export to DB" Grid.Column="7" Click="Save_Button_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" />
+        <Button x:Name="Read" Content="Import from  DB" Grid.Column="8" Click="Read_Button_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" />
+    </Grid>
+</Window>
