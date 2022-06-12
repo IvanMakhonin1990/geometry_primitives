@@ -1,2 +1,23 @@
-# geometry_primitives
-Save geometry primitives to existing table is follow to drop and recreate this table.
+
+# Simple WPF geometry viewer
+
+
+Описание
+======================
+Простейший просмотрщик геометрических фигур. Реализована возможность чтения/записи текущей сцены в СУБД Microsoft SQL Server
+
+Инструкция по развёртыванию и системные требования
+=======
+-MS SQL Server 2016
+-MS Visual Studio 2019
+-dotNet 5.0
+
+Планы по доработке проекта
+=======
+-Расширение функционала
+
+Использование
+=======
+-Установить все программы из списка
+-Создать базу данных при помощи MS SQL Server
+-Собрать и запустить приложение
